@@ -1,9 +1,14 @@
+[![Travis-CI][travis-badge]][travis-builds]
+
+[travis-badge]: https://travis-ci.org/IlliaTesliuk/lab8.svg?branch=master
+[travis-builds]: https://travis-ci.org/IlliaTesliuk/lab8/builds
+
 # Laboratory work 8
 ## HTTP server
 ### Description
 TCP server which receives TCP clients' requests and communicates with them using HTTP protocol.
 Server processes only HTTP GET requests.
-####Avaliable HTTP paths:
+#### Avaliable HTTP paths:
 * `/` - sends json object with information about server
 * `/favourites` - sends json list with favourite websites
 * `/favorites?{key}={value}` - sends json sublist with websites from `/favourites` list which have field `{key}` set as `{value}`
