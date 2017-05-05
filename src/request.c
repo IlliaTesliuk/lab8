@@ -32,6 +32,7 @@ void Response_init(Response * self) {
 char* Response_serverInfo(void) {
     const char name[] = "TCP/HTTP server";
     const char surname[] = "Tesliuk";
+    
     time_t now = time(NULL);
     struct tm * local = localtime(&now);
     char serverTime[50];
