@@ -8,19 +8,17 @@
 #define BUFFER_LEN 1024
 
 int main(int argc, char * argv[]) {
-    //
     if (argc < 2) {
 		puts("Please, specify server port in command line arguments");
 		return 1;
 	}
 	int port = atoi(argv[1]);
-    //
 
 	TcpClient * client = TcpClient_init(&(TcpClient){});
     IpAddress * serverAddress = IpAddress_init(&(IpAddress){}, "127.0.0.1", port);
     NetMessage * message = NetMessage_init(
-        &(NetMessage){},  // value on stack
-        (char[BUFFER_LEN]){},  // array on stack 
+        &(NetMessage){},  
+        (char[BUFFER_LEN]){}, 
         BUFFER_LEN); 
     
     if (!TcpClient_connect(client, serverAddress)) {
