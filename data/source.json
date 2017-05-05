@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Progbase",
+        "id": 1,
+        "country": "Ukraine",
+        "year": 2016,
+        "type": "Study"
+    },
+    {                               
+        "name": "Amazon",
+        "id": 2,
+        "country": "USA",
+        "year": 2008,
+        "type": "Shop"
+    },
+    {
+        "name": "Youtube",
+        "id": 3,
+        "country": "USA",
+        "year": 2005,
+        "type": "Entertainment"
+    },
+    {
+        "name": "Vk",
+        "id": 4,
+        "country": "Russia",
+        "year": 2006,
+        "type": "Network"
+    },
+    {
+        "name": "Instagram",
+        "id": 5,
+        "country": "USA",
+        "year": 2011,
+        "type": "Network"
+    }
+]
