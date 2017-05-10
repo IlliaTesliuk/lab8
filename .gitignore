@@ -41,5 +41,6 @@
 .buildconfig
 
 **/build
+**/docs
 **/html
 **/latex

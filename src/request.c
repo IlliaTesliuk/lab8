@@ -52,8 +52,10 @@ Request Request_parse(const char * str) {
     Request req = {
 		.command = ""
 	};
-    char* pch = strstr(str, " HTTP");
-    strncpy(req.command, str, pch-str);
+    if(str[0] != '\0') {
+        char* pch = strstr(str, " HTTP");
+        strncpy(req.command, str, pch-str);
+    }
     return req;
 }
 
@@ -117,7 +119,10 @@ void Request_process(Request* request, Response* responce, List* websites) {
 void Response_toMessage(Response* res,NetMessage * message) {
     char msg[BUFFER_SIZE];
     if(strlen(res->data)!=0) {
-        sprintf(msg,"HTTP/1.0 %i %s\n%s",res->status,res->description,res->data);
+        sprintf(msg,"HTTP/1.0 %i %s\n"
+        "Content-type: text/json\n"
+        "Content-length: %i\n"
+        "%s",res->status,res->description,strlen(res->data),res->data);
     } else {
         sprintf(msg,"HTTP/1.0 %i %s",res->status,res->description);
     }
